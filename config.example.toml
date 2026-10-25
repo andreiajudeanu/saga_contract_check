@@ -1,0 +1,46 @@
+# Copiati in config.toml si completati.
+
+[firma]
+cif = "RO12345678"
+
+[foldere]
+# Folderul in care SAGA C descarca e-Facturile primite (aplicatia doar citeste de aici;
+# calea exacta o vedeti cu butonul din "Import e-Facturi primite").
+efactura_saga = 'C:\SAGA C.3.0\e-Factura'
+# Aici se pun PDF-urile contractelor; cele noi sau modificate se citesc la urmatoarea rulare.
+contracte_pdf = 'C:\SAGA C.3.0\Contracte'
+# Aici scrie aplicatia facturile verificate; in SAGA: Import date din acest folder.
+import_saga = 'C:\SAGA C.3.0\Import verificat'
+# Caile relative pornesc din folderul proiectului.
+log = 'log'
+
+[procesare]
+# Facturile cu data mai veche nu se proceseaza (sunt deja inregistrate in SAGA).
+data_start = 2026-11-01
+toleranta_pret_lei = 0.01
+# Scor minim rapidfuzz (0-100) pentru potrivirea denumirilor.
+prag_potrivire = 85
+# "ascii" -> [OK] / [X]. Testat: SAGA C afiseaza doar ASCII (✔/✘ si ț/ș devin "?")
+# ("unicode" se vede doar in afara SAGA).
+simboluri = "ascii"
+lungime_max_mesaj = 250
+
+[saga]
+# Formatul datei in XML si in numele fisierului.
+format_data = "%d.%m.%Y"
+# Ce CIF intra in numele fisierului F_<cif>_<nr>_<data>.xml: "furnizor" sau "firma".
+# Testat in SAGA C cu "firma".
+cif_in_nume_fisier = "firma"
+# Valori implicite pe linie (goale = SAGA foloseste configurarea proprie).
+gestiune = ""
+activitate = ""
+# Cont folosit cand articolul din contract nu are cont propriu (contract_articole.cont).
+# SAGA respinge liniile fara cont ("Cont invalid") si deduce tipul articolului din cont:
+# 3028 = Alte mat. consumabile, 371 = Marfuri, 303 = Obiecte de inventar.
+cont = "3028"
+tip_deducere = ""
+
+[claude]
+model = "claude-sonnet-5-5"
+# Sub acest scor un camp extras din contract e considerat nesigur -> "Contract neclar".
+prag_incredere = 0.8

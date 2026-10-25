@@ -1,0 +1,26 @@
+# Chei Supabase / Anthropic - niciodata pe git (modelul gol e in .env.example)
+.env
+
+# Configurarea locala (modelul e in config.example.toml)
+config.toml
+
+# Rulari si teste locale
+test_run/
+log/
+arhiva_teste/
+*.log
+
+# Generate automat de Python
+__pycache__/
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+.venv/
+venv/
+
+# Editor si Windows
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

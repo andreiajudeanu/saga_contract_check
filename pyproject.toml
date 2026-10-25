@@ -1,0 +1,26 @@
+[project]
+name = "saga-contract-check"
+version = "0.1.0"
+description = "Verifica facturile e-Factura fata de contracte si pregateste importul in SAGA C"
+requires-python = ">=3.12"
+dependencies = [
+  "anthropic>=2.3",
+  "supabase>=2.33",
+  "httpx>=0.28",
+  "pydantic>=2.14",
+  "rapidfuzz>=3.14",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9"]
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
