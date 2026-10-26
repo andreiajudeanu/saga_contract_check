@@ -1,3 +1,4 @@
+AIWarriors: Ajudeanu Andrei, Lacatusu Daniel, Bondaret Lucas, Mirauta Bogdan;
 # Verificare factură ↔ contract pentru SAGA C
 
 Pentru fiecare e-Factură primită, aplicația verifică dacă respectă contractul furnizorului și pregătește
